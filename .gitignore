@@ -1,0 +1,8 @@
+.DS_Store
+._*
+gulpfile.js
+CHANGELOG.md
+README.md
+ISSUE_TEMPLATE.md
+package.json
+composer.json
