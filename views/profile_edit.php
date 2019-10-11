@@ -181,7 +181,7 @@ include_once('../includes/data.php');
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="users.php">
+            <a class="nav-link" href="#">
               <i class="ni ni-palette"></i> Usuários do Sistema
             </a>
           </li>
