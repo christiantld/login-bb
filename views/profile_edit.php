@@ -48,7 +48,7 @@ include_once('../includes/data.php');
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
-      <a class="navbar-brand pt-0" href="#">
+      <a class="navbar-brand pt-0" href="../views/profile.php">
         <img src="../assets/img/brand/black.png" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
@@ -155,7 +155,7 @@ include_once('../includes/data.php');
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  active " href="#">
+            <a class="nav-link" href="#">
               <i class="ni ni-single-02 text-yellow"></i> Histórico
             </a>
           </li>
@@ -204,7 +204,7 @@ include_once('../includes/data.php');
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="#">Perfil do Usuário</a>
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="#">Editar Perfil</a>
         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           <div class="form-group mb-0">

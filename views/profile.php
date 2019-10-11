@@ -155,7 +155,7 @@ include_once('../includes/data.php');
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  active " href="#">
+            <a class="nav-link" href="#">
               <i class="ni ni-single-02 text-yellow"></i> Histórico
             </a>
           </li>
