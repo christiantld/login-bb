@@ -32,8 +32,8 @@ DROP TABLE IF EXISTS `tb_funcionario`;
 CREATE TABLE IF NOT EXISTS `tb_funcionario` (
   `pk_funcionario` int(11) NOT NULL,
   `no_funcionario` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
-  `nu_cpf` bigint(11) NOT NULL,
-  `email` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `nu_cpf` bigint(11) ZEROFILL NOT NULL,
+  `email` varchar(45) COLLATE utf8_unicode_ci NOT NULL,s
   `nu_telefone` bigint(11) NOT NULL,
   `senha` varchar(32) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
