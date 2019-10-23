@@ -24,7 +24,7 @@ include_once('../includes/data.php');
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewsport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
     Alterar Perfil
   </title>
@@ -48,7 +48,7 @@ include_once('../includes/data.php');
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
-      <a class="navbar-brand pt-0" href="../views/profile.php">
+      <a class="navbar-brand pt-0" href="../Views/profile.php">
         <img src="../assets/img/brand/black.png" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
@@ -83,19 +83,19 @@ include_once('../includes/data.php');
             <div class=" dropdown-header noti-title">
               <h6 class="text-overflow m-0">Bem vindo!</h6>
             </div>
-            <a href="./views/profile.php" class="dropdown-item">
+            <a href="./Views/profile.php" class="dropdown-item">
               <i class="ni ni-single-02"></i>
               <span>Editar meu perfil</span>
             </a>
-            <a href="./views/profile.php" class="dropdown-item">
+            <a href="./Views/profile.php" class="dropdown-item">
               <i class="ni ni-settings-gear-65"></i>
               <span>Settings</span>
             </a>
-            <a href="./views/profile.php" class="dropdown-item">
+            <a href="./Views/profile.php" class="dropdown-item">
               <i class="ni ni-calendar-grid-58"></i>
               <span>Activity</span>
             </a>
-            <a href="./views/profile.php" class="dropdown-item">
+            <a href="./Views/profile.php" class="dropdown-item">
               <i class="ni ni-support-16"></i>
               <span>Support</span>
             </a>
@@ -239,7 +239,7 @@ include_once('../includes/data.php');
               <div class=" dropdown-header noti-title">
                 <h6 class="text-overflow m-0">Bem Vindo!</h6>
               </div>
-              <a href="../views/profile.php" class="dropdown-item">
+              <a href="../Views/profile.php" class="dropdown-item">
                 <i class="ni ni-single-02"></i>
                 <span>Meu Perfil</span>
               </a>
@@ -251,7 +251,7 @@ include_once('../includes/data.php');
                 <i class="ni ni-calendar-grid-58"></i>
                 <span>Atividade</span>
               </a>
-              <a href="../views/profile.php" class="dropdown-item">
+              <a href="../Views/profile.php" class="dropdown-item">
                 <i class="ni ni-support-16"></i>
                 <span>Estoque</span>
               </a>
@@ -277,7 +277,7 @@ include_once('../includes/data.php');
             <h1 class="display-2 text-white">Olá<?php if (isset($_SESSION['email'])) : $name = explode(' ', $nome);
                                                   echo ', ' . $name[0];
                                                 endif; ?></h1>
-            <p class="text-white mt-0 mb-5">Bem-vindo a sua pagina de perfil do Blackbook. Aqui você pode
+            <p class="text-white mt-0 mb-5">Bem-vindo a sua página de perfil do Blackbook. Aqui você pode
               visualizar os
               seus dados e alteralos quando quiser </p>
           </div>
@@ -316,11 +316,8 @@ include_once('../includes/data.php');
                 <h3>
                   <?php echo $nome; ?>
                 </h3>
-                <div class="h5 mt-4"> <?php if ($_SESSION['email'] === 'admin@admin.com') {
-                                        echo ' <i class="ni business_briefcase-24 mr-2"></i> Assistant to the regional manager';
-                                      } else {
-                                        echo '<i class="ni business_briefcase-24 mr-2"></i> Cargo na empresa';
-                                      };
+                <div class="h5 mt-4"> <?php
+                                      echo '<i class="ni business_briefcase-24 mr-2"></i>' . ucfirst($no_cargo);
                                       ?>
                 </div>
               </div>
@@ -392,15 +389,16 @@ include_once('../includes/data.php');
               <h6 class="heading-small text-muted mb-4">Permissões</h6>
               <div class="pl-lg-4">
                 <div class="form-group">
-                  <label>Cargo</label>
-                  <?php if ($_SESSION['email'] === 'admin@admin.com') {
-                    $cargo = 'Assistant to the regional manager';
-                  } else {
-                    $cargo = 'Funcionario';
-                  };
-                  ?>
-                  <input id="input-cargo" class="form-control form-control-alternative" placeholder="Cargo"
-                    value="<?php echo $cargo; ?>" type="text" disabled>
+                  <label for="input-cargo">Cargo</label>
+                  <select class="form-control form-control-alternative" id="input-cargo" name="cargo">
+                    <option value="" selected disabled hidden>Cargo</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Dentista</option>
+                    <option value="3">Auxiliar</option>
+                    <option value="4">Funcionário</option>
+                  </select>
+                  <input class="form-control form-control-alternative" placeholder="Cargo"
+                    value="<?php echo ucfirst($no_cargo); ?>" type="text" disabled>
                 </div>
               </div>
               <div class="col-12 d-flex justify-content-between ">

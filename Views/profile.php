@@ -24,7 +24,7 @@ include_once('../includes/data.php');
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewsport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
     Perfil
   </title>
@@ -83,27 +83,27 @@ include_once('../includes/data.php');
             <div class=" dropdown-header noti-title">
               <h6 class="text-overflow m-0">Bem vindo!</h6>
             </div>
-            <a href="./views/profile.php" class="dropdown-item">
+            <a href="./Views/profile.php" class="dropdown-item">
               <i class="ni ni-single-02"></i>
               <span>Meu Perfil</span>
             </a>
-            <a href="./views/profile.php" class="dropdown-item">
+            <a href="./Views/profile.php" class="dropdown-item">
               <i class="ni ni-settings-gear-65"></i>
-              <span>Settings</span>
+              <span>Configurações</span>
             </a>
-            <a href="./views/profile.php" class="dropdown-item">
+            <a href="./Views/profile.php" class="dropdown-item">
               <i class="ni ni-calendar-grid-58"></i>
-              <span>Activity</span>
+              <span>Atividade</span>
             </a>
-            <a href="./views/profile.php" class="dropdown-item">
+            <a href="./Views/profile.php" class="dropdown-item">
               <i class="ni ni-support-16"></i>
-              <span>Support</span>
+              <span>Estoque</span>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#!" class="dropdown-item">
+            <a href="./Views/index.php" class="dropdown-item">
               <i class="ni ni-user-run"></i>
-              <a href="../includes/logout.php"><span>Logout</span></span>
-              </a>
+              <span>Sair</span>
+            </a>
           </div>
         </li>
       </ul>
@@ -113,7 +113,7 @@ include_once('../includes/data.php');
         <div class="navbar-collapse-header d-md-none">
           <div class="row">
             <div class="col-6 collapse-brand">
-              <a href="../index.php">
+              <a href="./index.php">
                 <img src="../assets/img/brand/black.png">
               </a>
             </div>
@@ -240,7 +240,7 @@ include_once('../includes/data.php');
               <div class=" dropdown-header noti-title">
                 <h6 class="text-overflow m-0">Bem Vindo!</h6>
               </div>
-              <a href="../views/profile.php" class="dropdown-item">
+              <a href="../Views/profile.php" class="dropdown-item">
                 <i class="ni ni-single-02"></i>
                 <span>Meu Perfil</span>
               </a>
@@ -252,7 +252,7 @@ include_once('../includes/data.php');
                 <i class="ni ni-calendar-grid-58"></i>
                 <span>Atividade</span>
               </a>
-              <a href="../views/profile.php" class="dropdown-item">
+              <a href="../Views/profile.php" class="dropdown-item">
                 <i class="ni ni-support-16"></i>
                 <span>Estoque</span>
               </a>
@@ -278,7 +278,7 @@ include_once('../includes/data.php');
             <h1 class="display-2 text-white">Olá<?php if (isset($_SESSION['email'])) : $name = explode(' ', $nome);
                                                   echo ', ' . $name[0];
                                                 endif; ?></h1>
-            <p class="text-white mt-0 mb-5">Bem-vindo a sua pagina de perfil do Blackbook. Aqui você pode
+            <p class="text-white mt-0 mb-5">Bem-vindo a sua página de perfil do Blackbook. Aqui você pode
               visualizar os
               seus dados e alteralos quando quiser </p>
             <a href="profile_edit.php" class="btn btn-info">Editar perfil</a>
@@ -318,11 +318,8 @@ include_once('../includes/data.php');
                 <h3>
                   <?php echo $nome; ?>
                 </h3>
-                <div class="h5 mt-4"> <?php if ($_SESSION['email'] === 'admin@admin.com') {
-                                        echo ' <i class="ni business_briefcase-24 mr-2"></i> Assistant to the regional manager';
-                                      } else {
-                                        echo '<i class="ni business_briefcase-24 mr-2"></i> Cargo na empresa';
-                                      };
+                <div class="h5 mt-4"> <?php
+                                      echo '<i class="ni business_briefcase-24 mr-2"></i>' . ucfirst($no_cargo);
                                       ?>
                 </div>
               </div>
@@ -394,14 +391,8 @@ include_once('../includes/data.php');
               <div class="pl-lg-4">
                 <div class="form-group">
                   <label>Cargo</label>
-                  <?php if ($_SESSION['email'] === 'admin@admin.com') {
-                    $cargo = 'Assistant to the regional manager';
-                  } else {
-                    $cargo = 'Funcionario';
-                  };
-                  ?>
                   <input id="input-cargo" class="form-control form-control-alternative" placeholder="Cargo"
-                    value="<?php echo $cargo; ?>" type="text" disabled>
+                    value="<?php echo ucfirst($no_cargo); ?>" type="text" disabled>
                 </div>
               </div>
             </form>

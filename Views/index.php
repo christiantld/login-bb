@@ -70,15 +70,15 @@ session_start();
           <!-- Navbar items -->
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="../views/register.php">
+              <a class="nav-link nav-link-icon" href="../Views/register.php">
                 <i class="ni ni-circle-08"></i>
-                <span class="nav-link-inner--text">Register</span>
+                <span class="nav-link-inner--text">Cadastrar</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="../examples/login.html">
+              <a class="nav-link nav-link-icon" href="../Views/login.html">
                 <i class="ni ni-key-25"></i>
-                <span class="nav-link-inner--text">Login</span>
+                <span class="nav-link-inner--text">Entrar</span>
               </a>
             </li>
           </ul>
@@ -117,7 +117,7 @@ session_start();
                 <br>
                 <small>email: <strong>admin@admin.com</strong> / senha: <strong>admin123</strong></small>
               </div>
-              <?PHP
+              <?php
               if (isset($_SESSION['nao_autenticado'])) :
                 ?>
               <div class="rounded my-3 bg-warning text-center text-white">

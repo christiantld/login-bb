@@ -1,6 +1,4 @@
-<body>
-  <div class="container">
-    <?php //exclusao.php
+<?php //exclusao.php
     // efetua a exclusão do id informado.
     $id = $_GET["id"];
     echo $id;
@@ -10,13 +8,9 @@
       //  echo $result;
       echo "<h3>Exclusão efetuada com sucesso</h3>";
       session_destroy();
-      header('Location: ../views/index.php');
+      header('Location: ../Views/index.php');
       exit();
     }
     // fecha a conexão
     mysqli_close($link);
     ?>
-    <br>
-    <a class='btn waves-effect waves-light' href="../views/profile.php">Volta</a>
-
-  </div>

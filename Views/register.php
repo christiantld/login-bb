@@ -13,6 +13,9 @@
 =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +54,7 @@
             <div class="row">
               <div class="col-6 collapse-brand">
                 <a href="#">
-                  <img src="../assets/img/brand/blue.png">
+                  <img src="../assets/img/brand/black.png">
                 </a>
               </div>
               <div class="col-6 collapse-close">
@@ -66,15 +69,15 @@
           <!-- Navbar items -->
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="../views/register.php">
+              <a class="nav-link nav-link-icon" href="../Views/register.php">
                 <i class="ni ni-circle-08"></i>
-                <span class="nav-link-inner--text">Register</span>
+                <span class="nav-link-inner--text">Cadastrar</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="../views/index.php">
+              <a class="nav-link nav-link-icon" href="../Views/index.php">
                 <i class="ni ni-key-25"></i>
-                <span class="nav-link-inner--text">Login</span>
+                <span class="nav-link-inner--text">Entrar</span>
               </a>
             </li>
           </ul>
@@ -110,6 +113,16 @@
               <div class="text-center text-muted mb-4">
                 <big>Insira seus dados</big>
               </div>
+              <?php
+              if (isset($_SESSION['nao_cadastrado'])) :
+                ?>
+              <div class="rounded my-3 bg-warning text-center text-white">
+                <p>Selecione um cargo válido.</p>
+              </div>
+              <?php
+              endif;
+              unset($_SESSION['nao_cadastrado']);
+              ?>
               <!-- MUDAR FORM PARA CADASTRO.PHP -->
               <form action="../includes/inclusao.php" method="POST">
                 <div class="form-group">
@@ -136,6 +149,21 @@
                     <input class="form-control" placeholder="Telefone" type="text" name="telefone" maxlength="11">
                   </div>
                 </div>
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
+                    </div>
+                    <select class="form-control" name="cargo">
+                      <option value="" selected disabled hidden>Cargo</option>
+                      <option value="1">Administrador</option>
+                      <option value="2">Dentista</option>
+                      <option value="3">Auxiliar</option>
+                      <option value="4">Funcionário</option>
+                    </select>
+                  </div>
+                </div>
+                <hr>
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
                     <div class="input-group-prepend">

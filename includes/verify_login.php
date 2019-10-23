@@ -2,6 +2,6 @@
 session_start();
 
 if (!$_SESSION['email']) {
-  header('Location: ../views/index.php');
+  header('Location: ../Views/index.php');
   exit();
 }
